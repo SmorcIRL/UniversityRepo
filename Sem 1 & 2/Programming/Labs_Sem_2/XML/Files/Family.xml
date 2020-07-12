@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE Root
+  [
+  <!ELEMENT Root (Person*)>
+  <!ELEMENT Person (Marriage*)>
+  <!ELEMENT Marriage (Child*)>
+  <!ELEMENT Child EMPTY>
+
+  <!ATTLIST Root >
+  <!ATTLIST Person name CDATA #REQUIRED birth_date CDATA #REQUIRED>
+  <!ATTLIST Marriage spouse_name CDATA #REQUIRED marriage_date CDATA #REQUIRED divorce_date CDATA "null">
+  <!ATTLIST Child name CDATA #REQUIRED>
+  ]
+>
+
+<Root>
+
+  <Person name="Person_1" birth_date="1/1/1965">
+  </Person>
+
+  <Person name="Person_2" birth_date="1/1/1970">
+    <Marriage spouse_name="Spouse_2_1" marriage_date="1/1/1970">
+      <Child name ="Child_2_1_1"/>
+    </Marriage>
+  </Person>
+
+  <Person name="Person_3" birth_date="1/1/1970">
+    <Marriage spouse_name="Spouse_3_1" marriage_date="1/1/1970" divorce_date="1/1/1970">
+      <Child name ="Child_3_1_1"/>
+    </Marriage>
+    <Marriage spouse_name="Spouse_3_2" marriage_date="1/1/1970" divorce_date="1/1/1970">
+      <Child name ="Child_3_2_1"/>
+      <Child name ="Child_3_2_2"/>
+    </Marriage>
+  </Person>
+
+  <Person name="Person_4" birth_date="1/1/1970">
+    <Marriage spouse_name="Spouse_4_1" marriage_date="1/1/1970" divorce_date="1/1/1970">
+    </Marriage>
+    <Marriage spouse_name="Spouse_4_2" marriage_date="1/1/1970" divorce_date="1/1/1970">
+      <Child name ="Child_4_2_1"/>
+    </Marriage>
+    <Marriage spouse_name="Spouse_4_3" marriage_date="1/1/1970" divorce_date="null">
+      <Child name ="Child_4_3_1"/>
+      <Child name ="Child_4_3_2"/>
+      <Child name ="Child_4_3_3"/>
+      <Child name ="Child_4_3_4"/>
+    </Marriage>
+  </Person>
+
+</Root>
